@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login in</title>
+
+    <script type="text/javascript">
+        function checkinput()
+        {
+            if(myform.name.value=="")
+            {
+                alert("Please input username");
+                myform.name.focus();
+                return false;
+            }
+            if (myform.pwd.value=="")
+            {
+                alert("Please input password");
+                myform.pwd.focus();
+                return false;
+            }
+
+            if(myform.pwd.value != myform.pwdconfirm.value){
+                alert("The psssword is not same, please try again");
+                myform.pwd.focus();
+                return false;
+            }
+
+            if (myform.yzm.value=="")
+            {
+                alert("Please input verification code");
+                myform.yzm.focus();
+                return false;
+            }
+
+        }
+    </script>
+    <style type="text/css">
+
+        body{background: url(mare-gargano.jpg) no-repeat center;
+        }
+        .container{
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;margin-top: 240px;
+            box-shadow: 0 0 20px #222;
+            border-radius:40px;
+            background-color: rgba(152, 242, 242, 0.23);
+        }
+        .right {
+            position: relative;
+            left: 40px;
+            top: 20px;
+
+        }
+        input{
+            width: 180px;
+            height: 25px;
+        }
+
+        button{
+            background-color: rgba(230, 228, 236, 0.93);
+            border: none;
+            color: #110c0f;
+            padding: 10px 70px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<form action="reg.php" method="post" name="myform" onsubmit=" return checkinput();" >
+    <div class="container">
+        <div class="right">
+            <h2>user register</h2>
+
+            <p>username：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="name" id="name"></p>
+            <p>password: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="password" name="pwd" id="pwd"></p>
+            <p>confirm password: <input type="password" name="pwdconfirm" id="pwdconfirm"></p>
+            <p>verification code&nbsp：<input type="text" name="yzm" id="yzm">
+                <img src="yanzhengma.php" onClick="this.src='yanzhengma.php?nocache='+Math.random()" style="cursor:hand"></p>
+            <p><button type="submit" value="register" >register</button></p>
+        </div>
+    </div>
+</form>
+</body>
+</html>

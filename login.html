@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script type="text/javascript">
+        function foo(){
+            if(myform.name.value=="")
+            {
+                alert("Please input username");
+                myform.name.focus();
+                return false;
+            }
+            if (myform.pwd.value=="")
+            {
+                alert("Please input password");
+                myform.pwd.focus();
+                return false;
+            }
+            if (myform.yzm.value=="")
+            {
+                alert("Please input verification code");
+                myform.yzm.focus();
+                return false;
+            }
+        }
+    </script>
+    <style type="text/css">
+
+        body{background: url(mare-gargano.jpg) no-repeat center;
+        }
+        .container{
+            width: 500px;
+            height:400px;
+            margin: 0 auto;margin-top: 240px;
+            box-shadow: 0 0 20px #222;
+            border-radius:40px;
+            background-color: rgba(152, 242, 242, 0.23);
+        }
+        .right {
+            position: relative;
+            left: 40px;
+            top: 20px;
+        }
+        div.right{
+            position: relative;
+            left: 40px;
+            top: 20px;
+        }
+        input{
+            width: 180px;
+            height: 25px;
+        }
+        button{
+            background-color: rgba(230, 228, 236, 0.93); /* Green */
+            border: none;
+            color: #110c0f;
+            padding: 10px 30px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: -40px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form action="login.php" method="post" onsubmit="return foo();" name="myform" >
+    <div class="container"style="font-size:17px">
+        <div class="right">
+            <h2>login in</h2>
+            <p>
+                username:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="username" id="name" placeholder="Please input username">
+            </p>
+            <p>
+                password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name="password" id="pwd" placeholder="Please input password" >
+            </p>
+            <p>
+                verification code:<input type="text" name="yzm" id="yzm" placeholder="Please input  verification code">
+                <img src="yanzhengma.php" onClick="this.src='yanzhengma.php?nocache='+Math.random()" style="cursor:hand">
+            </p>
+            <p style=" margin-left: 200px"><a href="reg.html">register</a></p>
+            <p>
+                <button class="button">login in</button>
+            </p>
+        </div>
+    </div>
+</form>
+</body>
+</html>
